@@ -1,264 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Space Club - Govt Engineering College, Wayanad</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Video Background -->
-  <div class="video-background">
-    <video autoplay muted loop id="spaceVideo">
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-earth-in-space-2830-large.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-    <div class="video-overlay"></div>
-  </div>
-  
-  <!-- Stars Background -->
-  <div class="stars" id="stars"></div>
 
+<body>
   <!-- Navbar -->
   <nav id="navbar">
     <div class="logo">
-      <i class="fas fa-rocket"></i>
-      <span>Space Club</span>
+      <img src="assets/logo.png" height="40" width="50" alt="Space Club Logo">
+      <div class="logo-text">
+        <span class="main-title">ORION</span>
+        <span class="sub-title">Govt. Engineering College, Wayanad</span>
+      </div>
     </div>
-    <div class="menu-toggle" id="menuToggle">
+
+    <button class="menu-toggle" id="menuToggle">
       <i class="fas fa-bars"></i>
-    </div>
+    </button>
     <ul id="menu">
       <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#whatwedo">What We Do</a></li>
-      <li><a href="#domains">Research Domains</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About Us</a></li>
       <li><a href="#execom">Execom</a></li>
+      <li><a href="#focus">Our Focus</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#join">Join Us</a></li>
     </ul>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Govt Engineering College, Wayanad</h1>
-      <p>Welcome to the Space Club 🚀 | Explore the Universe with Us</p>
-      <a href="#join" class="hero-btn">Join Our Mission</a>
+  <!-- Space Section -->
+  <section id="space-section">
+    <video autoplay muted loop playsinline id="space-video">
+      <source src="assets/bg.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="quote">"The universe is not only stranger than we imagine, it is stranger than we can imagine."</h1>
+      <button id="join-btn">Join Now</button>
     </div>
-    <a href="#about" class="scroll-down">
-      <i class="fas fa-chevron-down"></i>
-    </a>
   </section>
 
-  <!-- About -->
+
   <section id="about">
-    <h2 class="section-title">About Us</h2>
-    <p>
-      The Space Club of Govt Engineering College, Wayanad, is a community of aspiring space enthusiasts, engineers, and innovators. We explore the mysteries of the universe, conduct workshops, research projects, and inspire students to dream beyond the stars. Our mission is to foster curiosity and innovation in space technology and astronomy.
-    </p>
-  </section>
-
-  <!-- Gallery -->
-  <section id="gallery">
-    <h2 class="section-title">Gallery</h2>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80" alt="Space Event">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>
+          ORION – The Space Club of Govt. Engineering College, Wayanad, is a community of students passionate
+          about exploring the universe. We engage in space research, innovative projects, and knowledge-sharing
+          activities, inspiring curiosity and innovation among budding engineers.
+        </p>
+        <p>
+          Our mission is to connect young minds with the wonders of space science and technology through
+          workshops, research, and hands-on projects. Together, we aim to reach for the stars ✨.
+        </p>
       </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1473929734816-6c9f58d57a9a?auto=format&fit=crop&w=800&q=80" alt="Workshop">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Stargazing">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=80" alt="Space Research">
+      <div class="about-image">
+        <img src="assets/about-space.png" alt="Space Exploration">
       </div>
     </div>
   </section>
 
-  <!-- What We Do -->
-  <section id="whatwedo">
-    <h2 class="section-title">What We Do</h2>
-    <div class="grid">
-      <div class="card activity-card">
-        <i class="fas fa-wrench"></i>
-        <h3>Workshops</h3>
-        <p>Hands-on sessions on astronomy, rocketry, and space technology.</p>
-      </div>
-      <div class="card activity-card">
-        <i class="fas fa-calendar-alt"></i>
-        <h3>Events</h3>
-        <p>Stargazing nights, space quizzes, and guest lectures.</p>
-      </div>
-      <div class="card activity-card">
-        <i class="fas fa-flask"></i>
-        <h3>Research</h3>
-        <p>Collaborative projects in astrophysics, satellites, and robotics.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Research Domains -->
-  <section id="domains">
-    <h2 class="section-title">Research Domains</h2>
-    <ul>
-      <li>Astronomy & Astrophysics</li>
-      <li>Rocketry & Space Propulsion</li>
-      <li>Satellite Communication</li>
-      <li>Robotics for Space</li>
-      <li>Space Tech & AI</li>
-    </ul>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="grid">
-      <div class="card project-card">
-        <i class="fas fa-rocket"></i>
-        <h3>Model Rocket</h3>
-        <p>Design and launch of experimental rockets.</p>
-      </div>
-      <div class="card project-card">
-        <i class="fas fa-satellite"></i>
-        <h3>CubeSat Prototype</h3>
-        <p>Miniature satellite design for space communication research.</p>
-      </div>
-      <div class="card project-card">
-        <i class="fas fa-star"></i>
-        <h3>AI Star Tracker</h3>
-        <p>AI-based star tracking system for navigation.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Execom -->
   <section id="execom">
-    <h2 class="section-title">Execom</h2>
-    <div class="execom">
-      <div class="member">
-        <div class="member-img">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="John Doe">
+    <h2>Meet Our Execom</h2>
+    <div class="execom-container">
+
+      <!-- Member 1 -->
+      <div class="execom-member">
+        <img src="assets/member1.jpg" alt="Member 1">
+        <div class="overlay">
+          <div class="social-links">
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
-        <h3>John Doe</h3>
-        <p>President</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-      <div class="member">
-        <div class="member-img">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Jane Smith">
-        </div>
-        <h3>Jane Smith</h3>
-        <p>Vice President</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+        <div class="member-info">
+          <h3>John Doe</h3>
+          <p>President</p>
         </div>
       </div>
-      <div class="member">
-        <div class="member-img">
-          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt="Alex Johnson">
+
+      <!-- Member 2 -->
+      <div class="execom-member">
+        <img src="assets/member2.jpg" alt="Member 2">
+        <div class="overlay">
+          <div class="social-links">
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
-        <h3>Alex Johnson</h3>
-        <p>Secretary</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+        <div class="member-info">
+          <h3>Jane Smith</h3>
+          <p>Vice President</p>
         </div>
       </div>
+
+
+    </div>
+
+    <!-- Load More Button -->
+    <div class="load-more-container">
+      <button id="loadMoreBtn">Load More</button>
     </div>
   </section>
 
-  <!-- Join Us -->
-  <section id="join">
-    <h2 class="section-title">Join Us</h2>
-    <form id="joinForm">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" placeholder="Your Name" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Your Email" required />
-      </div>
-      <div class="form-group">
-        <label for="department">Department</label>
-        <select id="department" required>
-          <option value="">Select Department</option>
-          <option value="cse">Computer Science</option>
-          <option value="ece">Electronics & Communication</option>
-          <option value="eee">Electrical & Electronics</option>
-          <option value="mech">Mechanical Engineering</option>
-          <option value="civil">Civil Engineering</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="year">Year of Study</label>
-        <select id="year" required>
-          <option value="">Select Year</option>
-          <option value="1">First Year</option>
-          <option value="2">Second Year</option>
-          <option value="3">Third Year</option>
-          <option value="4">Fourth Year</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Why do you want to join Space Club?</label>
-        <textarea id="message" rows="4" placeholder="Tell us about your interest in space..."></textarea>
-      </div>
-      <button type="submit">Join Now</button>
-    </form>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Space Club</h3>
-        <p>Exploring the universe, one project at a time. Join us in our mission to reach for the stars.</p>
-        <div class="social-media">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#join">Join Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact Info</h3>
-        <ul class="contact-info">
-          <li><i class="fas fa-map-marker-alt"></i> Govt Engineering College, Wayanad, Kerala</li>
-          <li><i class="fas fa-envelope"></i> spaceclub@gecwyd.ac.in</li>
-          <li><i class="fas fa-phone"></i> +91 98765 43210</li>
-        </ul>
-      </div>
+  <section id="our-focus">
+  <h2>Our Focus</h2>
+  <p class="focus-intro">We are dedicated to empowering students with innovation, technology, and creativity. Here’s what we focus on:</p>
+
+  <div class="focus-container">
+    <!-- Card 1 -->
+    <div class="focus-card">
+      <i class="fas fa-rocket"></i>
+      <h3>Innovation</h3>
+      <p>Encouraging students to think outside the box and develop futuristic ideas.</p>
     </div>
-    <div class="copyright">
-      <p>© 2025 Space Club | Govt Engineering College, Wayanad. All rights reserved.</p>
+
+    <!-- Card 2 -->
+    <div class="focus-card">
+      <i class="fas fa-users"></i>
+      <h3>Collaboration</h3>
+      <p>Building strong teamwork to achieve impactful projects and initiatives.</p>
     </div>
-  </footer>
+
+    <!-- Card 3 -->
+    <div class="focus-card">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h3>Learning</h3>
+      <p>Providing workshops, sessions, and guidance to nurture student skills.</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="focus-card">
+      <i class="fas fa-globe"></i>
+      <h3>Community</h3>
+      <p>Connecting students with global opportunities and tech communities.</p>
+    </div>
+  </div>
+</section>
+
+
+
 
   <script src="script.js"></script>
 </body>
+
 </html>
