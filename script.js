@@ -155,25 +155,6 @@ document.getElementById('join-btn').addEventListener('click', () => {
   });
 });
 
-// Load more button functionality
-document.getElementById('loadMoreBtn').addEventListener('click', function() {
-  // Animate button
-  this.style.transform = 'scale(0.95)';
-  setTimeout(() => {
-    this.style.transform = 'scale(1)';
-  }, 150);
-  
-  // Show message
-  this.innerHTML = '<i class="fas fa-hourglass-half"></i> Coming Soon...';
-  this.disabled = true;
-  this.style.opacity = '0.7';
-  
-  // Could add actual loading functionality here
-  setTimeout(() => {
-    alert('More execom members will be added soon! Stay tuned for updates.');
-  }, 500);
-});
-
 // Smooth scrolling for all internal links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -199,95 +180,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Enhanced button interactions
-document.querySelectorAll('button, .focus-card, .execom-member, .project-card').forEach(element => {
-  element.addEventListener('mouseenter', function() {
-    if (cursor) {
-      cursor.style.transform = 'scale(1.5)';
-      cursor.style.borderColor = '#6e45e2';
-    }
-  });
-  
-  element.addEventListener('mouseleave', function() {
-    if (cursor) {
-      cursor.style.transform = 'scale(1)';
-      cursor.style.borderColor = '#88d3ce';
-    }
-  });
-});
-
-// Enhanced Parallax effect for background elements
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const aboutImage = document.querySelector('.about-image');
-  const focusCards = document.querySelectorAll('.focus-card');
-  const projectCards = document.querySelectorAll('.project-card');
-  
-  if (aboutImage) {
-    const speed = 0.3;
-    const yPos = -(scrolled * speed);
-    aboutImage.style.transform = `translateY(${yPos}px)`;
-  }
-  
-  focusCards.forEach((card, index) => {
-    const speed = 0.2 + (index * 0.1);
-    const yPos = -(scrolled * speed);
-    card.style.transform = `translateY(${yPos}px)`;
-  });
-});
-
-// Project Cards Animation on Scroll
-const projectCards = document.querySelectorAll('.project-card');
-const projectObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('animate-in');
-      }, index * 200);
-      projectObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.1
-});
-
-projectCards.forEach(card => {
-  projectObserver.observe(card);
-});
-
-// Projects Button Click Handler
-document.querySelector('.projects-btn')?.addEventListener('click', function() {
-  // Animate button
-  this.style.transform = 'scale(0.95)';
-  setTimeout(() => {
-    this.style.transform = 'scale(1.05)';
-    setTimeout(() => {
-      this.style.transform = 'scale(1)';
-    }, 150);
-  }, 150);
-  
-  // Show message with enhanced styling
-  const originalText = this.innerHTML;
-  this.innerHTML = '<i class="fas fa-rocket"></i> Launching Soon...';
-  this.style.background = 'linear-gradient(135deg, #ff9800, #6e45e2)';
-  
-  setTimeout(() => {
-    alert('🚀 More amazing projects are being developed! Check back soon for updates on our latest space innovations.');
-    this.innerHTML = originalText;
-    this.style.background = 'linear-gradient(135deg, #6e45e2 0%, #88d3ce 50%, #ff9800 100%)';
-  }, 1000);
-});
-
-// Add stagger animation to project cards on scroll
-const animateProjectCards = () => {
-  projectCards.forEach((card, index) => {
-    card.style.animationDelay = `${index * 0.1}s`;
-  });
-};
-
-animateProjectCards();
-
-
 
 // footer
 
@@ -307,3 +199,25 @@ animateProjectCards();
                 });
             });
         });
+
+
+
+// Add this inside your main DOMContentLoaded function in script.js
+
+// ----- FOCUS SECTION "CONSTELLATION" ANIMATION -----
+const focusCards = document.querySelectorAll('.focus-card');
+
+const focusObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { 
+    threshold: 0.1 // Trigger when 10% of the card is visible
+});
+
+focusCards.forEach(card => {
+    focusObserver.observe(card);
+});

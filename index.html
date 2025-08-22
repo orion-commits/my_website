@@ -1,465 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ORION - Space Club | Govt Engineering College, Wayanad</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORION - Space Club | Govt Engineering College, Wayanad</title>
+  
+  <!-- CSS Links - Always in the head for immediate styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+   <link rel="stylesheet" href="styles/loading.css">
+   <link rel="stylesheet" href="styles/space-section.css">
+   <link rel="stylesheet" href="styles/about.css">
+   <link rel="stylesheet" href="styles/execom.css">
+   <link rel="stylesheet" href="styles/project.css">
+   <link rel="stylesheet" href="styles/join-us.css">
+   <link rel="stylesheet" href="styles/focus.css"> 
+   <link rel="stylesheet" href="styles/footer.css">
 </head>
+
 <body>
-<!-- Loading Screen -->
-<div class="loading-screen" id="loadingScreen">
-  <div class="spinner"></div>
-  <div class="loading-text">ORION LOADING...</div>
-</div>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="spinner"></div>
+    <div class="loading-text">ORION LOADING...</div>
+  </div>
 
-<!-- Custom Cursor -->
-<div class="cursor"></div>
-<div class="cursor-follower"></div>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
 
-<!-- Floating Particles -->
-<div class="particles" id="particles"></div>
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
 
-<!-- Navbar -->
-<nav id="navbar">
-  <div class="logo">
-    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDUwIDQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9InN0YXJHcmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzY2ZTJlMiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzZlNDVlMiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI1MCIgaGVpZ2h0PSI0MCIgZmlsbD0idHJhbnNwYXJlbnQiLz48Y2lyY2xlIGN4PSIyNSIgY3k9IjIwIiByPSIxNSIgZmlsbD0idXJsKCNzdGFyR3JhZGllbnQpIiBvcGFjaXR5PSIwLjgiLz48cG9seWdvbiBwb2ludHM9IjI1LDggMjgsOCAxOCwzMiAxNSwzMiAzNSwzMiAzMiwzMiIgZmlsbD0iIzg4ZDNjZSIvPjxwb2x5Z29uIHBvaW50cz0iMTgsOCAxNSwxOCAzNSwxOCAzMiw4IiBmaWxsPSIjNmU0NWUyIi8+PHBvbHlnb24gcG9pbnRzPSIyNSwyIDMwLDEwIDIwLDEwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjkiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjEyIiByPSIxLjUiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNyIvPjxjaXJjbGUgY3g9IjM1IiBjeT0iMjgiIHI9IjEiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNiIvPjxjaXJjbGUgY3g9IjQwIiBjeT0iMTAiIHI9IjAuNSIgZmlsbD0iIzg4ZDNjZSIgb3BhY2l0eT0iMC44Ii8+PC9zdmc+" height="40" width="50" alt="ORION Logo">
-    <div class="logo-text">
-      <span class="main-title">ORION</span>
-      <span class="sub-title">Govt. Engineering College, Wayanad</span>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="logo">
+      <img
+        src="assets/logo.png"
+        height="40" width="50" alt="ORION Logo">
+      <div class="logo-text">
+        <span class="main-title">ORION</span>
+        <span class="sub-title">Govt. Engineering College, Wayanad</span>
+      </div>
     </div>
-  </div>
-  <button class="menu-toggle" id="menuToggle">
-    <i class="fas fa-bars"></i>
-  </button>
-  <ul id="menu">
-    <li><a href="#space-section">Home</a></li>
-    <li><a href="#about">About Us</a></li>
-    <li><a href="#execom">Execom</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#our-focus">Our Focus</a></li>
-    <li><a href="#space-section">Join Us</a></li>
-  </ul>
-</nav>
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul id="menu">
+      <li><a href="#space-section">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#execom">Execom</a></li>
+      <li><a href="#our-focus">Our Focus</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#join-us">Join Us</a></li>
+    </ul>
+  </nav>
 
-<!-- Space Section -->
-<section id="space-section">
-  <!-- Background Video with multiple fallbacks -->
-  <div class="video-container">
-    <video autoplay muted loop playsinline class="bg-video" id="bgVideo">
-      <source src="assets/bg.mp4" type="video/mp4">
-     
-      Your browser does not support the video tag.
-    </video>
-    <!-- Fallback image if video fails -->
-    <div class="fallback-image" style="display:none;"></div>
-  </div>
-  
-  <!-- Dark Overlay -->
-  <div class="overlay"></div>
-  
-  <!-- Content -->
-  <div class="content">
-    <h1 class="quote">
-      "The universe is not only stranger than we imagine, it is stranger than we can imagine."
-    </h1>
-    <button id="join-btn">Join Our Journey</button>
-  </div>
-</section>
+  <!-- Space Section -->
+  <section id="space-section">
+    <div class="video-container">
+      <video autoplay muted loop playsinline class="bg-video" id="bgVideo">
+        <source src="assets/bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="fallback-image" style="display:none;"></div>
+    </div>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="quote">
+        "The universe is not only stranger than we imagine, it is stranger than we can imagine."
+      </h1>
+      <button id="join-btn">Join Our Journey</button>
+    </div>
+  </section>
 
-<!-- About Us Section -->
-<section id="about" class="section-hidden">
-  <div class="about-container">
-    <div class="about-text">
-      <h2>About Us</h2>
-      <p>
-        ORION – The Space Club of Govt. Engineering College, Wayanad, is a community of students passionate
-        about exploring the universe. We engage in space research, innovative projects, and knowledge-sharing
-        activities, inspiring curiosity and innovation among budding engineers.
+  <!-- About Us Section -->
+  <section id="about" class="section-hidden">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>
+          ORION – The Space Club of Govt. Engineering College, Wayanad, is a community of students passionate
+          about exploring the universe. We engage in space research, innovative projects, and knowledge-sharing
+          activities, inspiring curiosity and innovation among budding engineers.
+        </p>
+        <p>
+          Our mission is to connect young minds with the wonders of space science and technology through
+          workshops, research, and hands-on projects. Together, we aim to reach for the stars and beyond.
+        </p>
+      </div>
+      <div class="about-image">
+        <img
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy5wMy5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgNDAwIDMwMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJzcGFjZUdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGEwZTE3Ii8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTFmM2EiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwZjE1MjUiLz48L2xpbmVhckdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0icGxhbmV0R3JhZGllbnQiIGN4PSI1MCUiIGN5PSI1MCUiIHI9IjUwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzY2ZTJlMiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzZlNDVlMiIvPjwvcmFkYWxHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjc3BhY2VHcmFkaWVudCkiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNTAiIHJ9PSI4MCIgZmlsbD0idXJsKCNwbGFuZXRHcmFkaWVudCkiIG9wYWNpdHk9IjAuOCIvPjxjaXJjbGUgY3g9IjIzMCIgY3k9IjEyMCIgcj0iMTUiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOSIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjYwIiByPSI4IiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjcuIi8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iNDAiIHI9IjQiIGZpbGw9IiM4OGQzY2UiIG9wYWNpdHk9IjAuOCIvPjxjaXJjbGUgY3g9IjYwIiBj eT0iMjAwIiByPSIzIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIyMjAiIHI9IjUiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNyIvPjxlbGxpcHNlIGN4PSIyMDAiIGN5PSIxNTAiIHJ4PSIxMjAiIHJ5PSIxNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODhkM2NlIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuNiIvPjxwYXRoIGQ9iTExMCAyNzAgQzE0MCAyNDAsMTkwIDI0MCwyMDAgMjcwIEMyMjAgMjQwLDI2MCAyNDAsMzAwIDI3MCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiIG9wYWNpdHk9IjAuNCIvPjxwb2x5Z29uIHBvaW50cz0iMjAwLDIyMCAyMTAsMjYwIDE5MCwyNjAiIGZpbGw9IiM4OGQzY2UiIG9wYWNpdHk9IjAuOSIvPjwvc3ZnPg=="
+          alt="Space Exploration">
+      </div>
+    </div>
+  </section>
+
+  <!-- Execom Section -->
+  <section id="execom" class="section-hidden">
+    <h2>Meet Our Execom</h2>
+    <div class="execom-container" id="execom-container">
+      <!-- Execom members will be dynamically loaded here by JavaScript -->
+    </div>
+    <!-- Removed 'load-more-container' and 'loadMoreBtn' if using auto-scroll -->
+  </section>
+
+  <!-- Our Focus Section -->
+  <section id="our-focus" class="focus-section section-hidden">
+    <div class="container">
+      <div class="focus-header">
+        <h2>Our Core Focus</h2>
+        <p class="focus-intro">We explore the frontiers of space technology by focusing on these key interconnected
+          domains. Each skill builds upon the others, forming our constellation of knowledge.</p>
+      </div>
+      <div class="focus-grid" id="focus-grid-container">
+        <!-- Focus cards will be dynamically loaded here by JavaScript -->
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section-hidden">
+    <div class="projects-header">
+      <h2>Our Projects</h2>
+      <p class="projects-intro">Explore the innovative projects and research initiatives undertaken by ORION members.
       </p>
-      <p>
-        Our mission is to connect young minds with the wonders of space science and technology through
-        workshops, research, and hands-on projects. Together, we aim to reach for the stars and beyond.
-      </p>
     </div>
-    <div class="about-image">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgNDAwIDMwMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJzcGFjZUdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGEwZTE3Ii8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTFmM2EiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwZjE1MjUiLz48L2xpbmVhckdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0icGxhbmV0R3JhZGllbnQiIGN4PSI1MCUiIGN5PSI1MCUiIHI9IjUwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzY2ZTJlMiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzZlNDVlMiIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI3NwYWNlR3JhZGllbnQpIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTUwIiByPSI4MCIgZmlsbD0idXJsKCNwbGFuZXRHcmFkaWVudCkiIG9wYWNpdHk9IjAuOCIvPjxjaXJjbGUgY3g9IjIzMCIgY3k9IjEyMCIgcj0iMTUiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOSIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjYwIiByPSI4IiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjciLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI0MCIgcj0iNCIgZmlsbD0iIzg4ZDNjZSIgb3BhY2l0eT0iMC44Ii8+PGNpcmNsZSBjeD0iNjAiIGN5PSIyMDAiIHI9IjMiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNiIvPjxjaXJjbGUgY3g9IjMyMCIgY3k9IjIyMCIgcj0iNSIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC43Ii8+PGVsbGlwc2UgY3g9IjIwMCIgY3k9IjE1MCIgcng9IjEyMCIgcnk9IjE1IiBmaWxsPSJub25lIiBzdHJva2U9IiM4OGQzY2UiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC42Ii8+PHBhdGggZD0iTTEwMCAyNzAgQzE0MCAyNDAsMTgwIDI0MCwyMDAgMjcwIEMyMjAgMjQwLDI2MCAyNDAsMzAwIDI3MCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiIG9wYWNpdHk9IjAuNCIvPjxwb2x5Z29uIHBvaW50cz0iMjAwLDIyMCAyMTAsMjYwIDE5MCwyNjAiIGZpbGw9IiM4OGQzY2UiIG9wYWNpdHk9IjAuOSIvPjwvc3ZnPg==" alt="Space Exploration">
+    <div class="projects-container" id="projects-container">
+      <!-- Projects will be dynamically loaded here by JavaScript -->
     </div>
-  </div>
-</section>
-
-<!-- Execom Section -->
-<section id="execom" class="section-hidden">
-  <h2>Meet Our Execom</h2>
-  <div class="execom-container">
-    <!-- Member 1 -->
-    <div class="execom-member">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMzIwIiB2aWV3Qm94PSIwIDAgMzIwIDMyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJwZXJzb24xIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMzI0MjYxIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNmU0NWUyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9InVybCgjcGVyc29uMSkiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSIxMDAiIHI9IjUwIiBmaWxsPSIjODhhYmNjIiBvcGFjaXR5PSIwLjkiLz48cmVjdCB4PSIxMTAiIHk9IjE2MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4MCIgZmlsbD0iIzg4YWJjYyIgb3BhY2l0eT0iMC45Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iMyIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC43Ii8+PGNpcmNsZSBjeD0iMjgwIiBjeT0iNjAiIHI9IjIiIGZpbGw9IiM4OGQzY2UiIG9wYWNpdHk9IjAuOCIvPjwvc3ZnPg==" alt="President">
-      <div class="overlay">
-        <div class="social-links">
-          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <div class="member-info">
-        <h3>Arjun Krishnan</h3>
-        <p>President</p>
-      </div>
+    <div class="projects-cta">
+      <button class="projects-btn">View All Projects</button>
     </div>
-
-    <!-- Member 2 -->
-    <div class="execom-member">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMzIwIiB2aWV3Qm94PSIwIDAgMzIwIDMyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJwZXJzb24yIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMzI0MjYxIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojODhkM2NlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9InVybCgjcGVyc29uMikiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSIxMDAiIHI9IjUwIiBmaWxsPSIjYzg4YWJjIiBvcGFjaXR5PSIwLjkiLz48cGF0aCBkPSJNMTEwIDE2MCBMMTE0IDI0MCBMMTA2IDI0MCBMMJQ2IDI0MCBMMJM0IDI0MCBMMJM0IDE2MCBDMTK1IDE3MCWGNTE2NSAxNzAeMTU1IDE2MCBaIiBmaWxsPSIjYzg4YWJjIiBvcGFjaXR5PSIwLjkiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjgwIiByPSIyIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSIyNzAiIGN5PSIyMDAiIHI9IjQiIGZpbGw9IiM2ZTQ1ZTIiIG9wYWNpdHk9IjAuNyIvPjwvc3ZnPg==" alt="Vice President">
-      <div class="overlay">
-        <div class="social-links">
-          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <div class="member-info">
-        <h3>Priya Nair</h3>
-        <p>Vice President</p>
-      </div>
-    </div>
-
-    <!-- Member 3 -->
-    <div class="execom-member">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMzIwIiB2aWV3Qm94PSIwIDAgMzIwIDMyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJwZXJzb24zIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMzI0MjYxIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNmU0NWUyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9InVybCgjcGVyc29uMykiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSIxMDAiIHI9IjUwIiBmaWxsPSIjODhhYmNjIiBvcGFjaXR5PSIwLjkiLz48cmVjdCB4PSIxMTAiIHk9IjE2MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4MCIgZmlsbD0iIzg4YWJjYyIgb3BhY2l0eT0iMC45Ii8+PGNpcmNsZSBjeD0iNjAiIGN5PSIyNDAiIHI9IjMiIGZpbGw9IiM4OGQzY2UiIG9wYWNpdHk9IjAuOCIvPjxjaXJjbGUgY3g9IjI2MCIgY3k9IjUwIiByPSIyIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjciLz48L3N2Zz4=" alt="Technical Head">
-      <div class="overlay">
-        <div class="social-links">
-          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <div class="member-info">
-        <h3>Ravi Menon</h3>
-        <p>Technical Head</p>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Load More Button -->
-  <div class="load-more-container">
-    <button id="loadMoreBtn">Load More</button>
-  </div>
-</section>
-
-<!-- Our Focus Section -->
-<div class="container">
-        <h2>Our Focus</h2>
-        <p class="focus-intro">We are dedicated to empowering students with innovation, technology, and creativity. Here's what we focus on and what we provide:</p>
-
-        <div class="timeline-container">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>AI and ML</h3>
-                    <p>We champion AI and ML projects in space, guiding students to create smart, innovative solutions for analyzing satellite data and enabling autonomous operations.</p>
-                </div>
-                <div class="timeline-icon">
-                    <i class="fas fa-satellite-dish"></i>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>RF Communication & Ham Radios</h3>
-                    <p>Students learn about radio frequency communication, practical applications with ham radios, and the fundamentals of wireless technology for space and ground-based projects.</p>
-                </div>
-                <div class="timeline-icon">
-                    <i class="fas fa-broadcast-tower"></i>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Antenna Designing</h3>
-                    <p>We guide students through the process of designing, building, and testing antennas, a critical skill for effective space and terrestrial communication.</p>
-                </div>
-                <div class="timeline-icon">
-                    <i class="fas fa-wave-square"></i>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Space Robotics</h3>
-                    <p>Our workshops focus on space robotics, covering everything from robotic arm mechanics to autonomous navigation, essential for future space missions.</p>
-                </div>
-                <div class="timeline-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Community & Global Opportunities</h3>
-                    <p>We connect students with global tech communities, competitions, and collaborative projects, helping them apply their skills and expand their network.</p>
-                </div>
-                <div class="timeline-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!-- Projects Section -->
-<section id="projects" class="section-hidden">
-  <div class="projects-header">
-    <h2>Our Projects</h2>
-    <p class="projects-intro">Explore the innovative projects and research initiatives undertaken by ORION members.</p>
-  </div>
-  
-  <div class="projects-container">
-    <!-- Project 1 -->
-    <div class="project-card">
-      <div class="project-image">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJzcGFjZUJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGEwZTE3Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWExZjNhIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9InVybCgjc3BhY2VCZykiLz48Y2lyY2xlIGN4PSIzMDAiIGN5PSI4MCIgcj0iNDAiIGZpbGw9IiM2ZTQ1ZTIiIG9wYWNpdHk9IjAuOCIvPjxwb2x5Z29uIHBvaW50cz0iMjAwLDE1MCAyNDAsMjAwIDE2MCwyMDAiIGZpbGw9IiM4OGQzY2UiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI2MCIgcj0iMjAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNyIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMTgwIiByPSI4IiBmaWxsPSIjODhkM2NlIiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSIzNTAiIGN5PSIyMDAiIHI9IjUiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNSIvPjwvc3ZnPg==" alt="Satellite Project">
-        <div class="project-overlay">
-          <div class="project-links">
-            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="project-info">
-        <h3>CubeSat Development</h3>
-        <p class="project-description">Design and development of a miniature satellite for atmospheric research and data collection.</p>
-        <div class="project-tags">
-          <span class="tag">Satellite Tech</span>
-          <span class="tag">Research</span>
-          <span class="tag">IoT</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card">
-      <div class="project-image">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJyb2NrZXRCZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBhMGUxNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFhMWYzYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiBmaWxsPSJ1cmwoI3JvY2tldEJnKSIvPjxyZWN0IHg9IjE4MCIgeT0iNTAiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxNDAiIGZpbGw9IiM4OGQzY2UiLz48cG9seWdvbiBwb2ludHM9IjE4MCw1MCAyMDAsNDAgMjIwLDUwIiBmaWxsPSIjNmU0NWUyIi8+PHJlY3QgeD0iMTcwIiB5PSIxOTAiIHdpZHRoPSI2MCIgaGVpZ2h0PSIzMCIgZmlsbD0iI2ZmOTgwMCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSI0IiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjgiLz48Y2lyY2xlIGN4PSIzMDAiIGN5PSIxNDAiIHI9IjMiIGZpbGw9IiM4OGQzY2UiIG9wYWNpdHk9IjAuNyIvPjxjaXJjbGUgY3g9IjMzMCIgY3k9IjcwIiByPSIyIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjYiLz48L3N2Zz4=" alt="Rocket Project">
-        <div class="project-overlay">
-          <div class="project-links">
-            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="project-info">
-        <h3>Model Rocket Design</h3>
-        <p class="project-description">Engineering and testing of small-scale rockets with recovery systems and telemetry data logging.</p>
-        <div class="project-tags">
-          <span class="tag">Aerospace</span>
-          <span class="tag">Engineering</span>
-          <span class="tag">Testing</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card">
-      <div class="project-image">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJ0ZWxlQmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwYTBlMTciLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTFmM2EiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0idXJsKCN0ZWxlQmcpIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTI1IiByPSI4MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODhkM2NlIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9IjAuOCIvPjxyZWN0IHg9IjE4MCIgeT0iNDAiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxNzAiIGZpbGw9IiM2ZTQ1ZTIiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSI0MCIgcj0iMTUiIGZpbGw9IiM4OGQzY2UiLz48cG9seWdvbiBwb2ludHM9IjE2MCwyMTAgMjQwLDIxMCAyMjAsMjMwIDE4MCwyMzAiIGZpbGw9IiM2ZTQ1ZTIiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjEwMCIgcj0iMyIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC43Ii8+PGNpcmNsZSBjeD0iMzIwIiBjeT0iNjAiIHI9IjIiIGZpbGw9IiM4OGQzY2UiIG9wYWNpdHk9IjAuOCIvPjxjaXJjbGUgY3g9IjM0MCIgY3k9IjE4MCIgcj0iNCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC42Ii8+PC9zdmc+" alt="Telescope Project">
-        <div class="project-overlay">
-          <div class="project-links">
-            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="project-info">
-        <h3>Smart Telescope System</h3>
-        <p class="project-description">Automated telescope with AI-powered object detection and tracking for celestial observations.</p>
-        <div class="project-tags">
-          <span class="tag">AI/ML</span>
-          <span class="tag">Astronomy</span>
-          <span class="tag">Automation</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 4 -->
-    <div class="project-card">
-      <div class="project-image">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJzdGF0aW9uQmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwYTBlMTciLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTFmM2EiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0idXJsKCNzdGF0aW9uQmcpIi8+PHJlY3QgeD0iMTAwIiB5PSIxMDAiIHdpZHRoPSIyMDAiIGhlaWdodD0iNjAiIGZpbGw9IiM4OGQzY2UiIG9wYWNpdHk9IjAuOCIvPjxyZWN0IHg9IjEyMCIgeT0iODAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMjAiIGZpbGw9IiM2ZTQ1ZTIiLz48cmVjdCB4PSIxMjAiIHk9IjE2MCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzZlNDVlMiIvPjxjaXJjbGUgY3g9IjgwIiBjeT0iMTMwIiByPSIxNSIgZmlsbD0iIzY2ZTJlMiIvPjxjaXJjbGUgY3g9IjMyMCIgY3k9IjEzMCIgcj0iMTUiIGZpbGw9IiM2NmUyZTIiLz48Y2lyY2xlIGN4PSI2MCIgY3k9IjgwIiByPSIzIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjciLz48Y2lyY2xlIGN4PSIzNDAiIGN5PSI2MCIgcj0iNCIgZmlsbD0iIzg4ZDNjZSIgb3BhY2l0eT0iMC44Ii8+PGNpcmNsZSBjeD0iMzYwIiBjeT0iMjAwIiByPSIyIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjYiLz48L3N2Zz4=" alt="Space Station">
-        <div class="project-overlay">
-          <div class="project-links">
-            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="project-info">
-        <h3>Space Station Simulator</h3>
-        <p class="project-description">Virtual reality simulation of International Space Station operations and zero-gravity experiments.</p>
-        <div class="project-tags">
-          <span class="tag">VR/AR</span>
-          <span class="tag">Simulation</span>
-          <span class="tag">Education</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 5 -->
-    <div class="project-card">
-      <div class="project-image">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJtYXJzQmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwYTBlMTciLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTFmM2EiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0idXJsKCNtYXJzQmcpIi8+PGNpcmNsZSBjeD0iMzAwIiBjeT0iMTAwIiByPSI2MCIgZmlsbD0iI2ZmNjc0NyIgb3BhY2l0eT0iMC44Ii8+PHJlY3QgeD0iODAiIHk9IjE1MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzg4ZDNjZSIvPjxyZWN0IHg9IjcwIiB5PSIxOTAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgZmlsbD0iIzZlNDVlMiIvPjxyZWN0IHg9IjE1MCIgeT0iMTkwIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIGZpbGw9IiM2ZTQ1ZTIiLz48Y2lyY2xlIGN4PSI0MCIgY3k9IjYwIiByPSI0IiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjciLz48Y2lyY2xlIGN4PSIzNjAiIGN5PSI0MCIgcj0iMyIgZmlsbD0iIzg4ZDNjZSIgb3BhY2l0eT0iMC44Ii8+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMDAiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNiIvPjwvc3ZnPg==" alt="Mars Rover">
-        <div class="project-overlay">
-          <div class="project-links">
-            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="project-info">
-        <h3>Mars Rover Prototype</h3>
-        <p class="project-description">Autonomous rover designed to navigate rough terrain and collect scientific data samples.</p>
-        <div class="project-tags">
-          <span class="tag">Robotics</span>
-          <span class="tag">AI</span>
-          <span class="tag">Autonomous</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 6 -->
-    <div class="project-card">
-      <div class="project-image">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhcHBCZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBhMGUxNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFhMWYzYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiBmaWxsPSJ1cmwoI2FwcEJnKSIvPjxyZWN0IHg9IjEyMCIgeT0iNjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTMwIiByeD0iMTAiIGZpbGw9IiM4OGQzY2UiIG9wYWNpdHk9IjAuOCIvPjxyZWN0IHg9IjE0MCIgeT0iODAiIHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMyMjI3MzQiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSIxMDAiIHI9IjEwIiBmaWxsPSIjNmU0NWUyIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTAwIiByPSIxMCIgZmlsbD0iIzY2ZTJlMiIvPjxjaXJjbGUgY3g9IjI0MCIgY3k9IjEwMCIgcj0iMTAiIGZpbGw9IiNmZjk4MDAiLz48Y2lyY2xlIGN4PSIxODAiIGN5PSIxNDAiIHI9IjgiIGZpbGw9IiM4OGQzY2UiLz48Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDAiIHI9IjgiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMTAwIiByPSIzIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjciLz48Y2lyY2xlIGN4PSIzNTAiIGN5PSIxNTAiIHI9IjQiIGZpbGw9IiM4OGQzY2UiIG9wYWNpdHk9IjAuOCIvPjwvc3ZnPg==" alt="Planetarium App">
-        <div class="project-overlay">
-          <div class="project-links">
-            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="project-info">
-        <h3>Digital Planetarium</h3>
-        <p class="project-description">Interactive mobile app for stargazing with real-time sky mapping and constellation identification.</p>
-        <div class="project-tags">
-          <span class="tag">Mobile App</span>
-          <span class="tag">AR</span>
-          <span class="tag">Education</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="projects-cta">
-    <button class="projects-btn">View All Projects</button>
-  </div>
-</section>
+    <!-- REMINDER: The JavaScript links for this section belong at the very end of your <body> tag. -->
 </section>
 
 
-<!-- join us section -->
-<section id="join-us" class="section-hidden">
-        <div class="join-header">
-            <h2>Join ORION</h2>
-            <p class="join-intro">Ready to embark on your space exploration journey? Join our community of passionate engineers and researchers.</p>
+  <!-- Join Us Section -->
+  <section id="join-us" class="section-hidden">
+    <div class="join-header">
+      <h2>Join ORION</h2>
+      <p class="join-intro">Ready to embark on your space exploration journey? Join our community of passionate
+        engineers and researchers.</p>
+    </div>
+    <div class="join-benefits">
+      <h3>What You'll Get</h3>
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <i class="fas fa-graduation-cap"></i>
+          <div class="benefit-content">
+            <h4>Skill Development</h4>
+            <p>Learn cutting-edge space technologies and engineering practices</p>
+          </div>
         </div>
-        
-        <div class="join-benefits">
-            <h3>What You'll Get</h3>
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="benefit-content">
-                        <h4>Skill Development</h4>
-                        <p>Learn cutting-edge space technologies and engineering practices</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-users"></i>
-                    <div class="benefit-content">
-                        <h4>Networking</h4>
-                        <p>Connect with like-minded peers and industry professionals</p>
-                    </div>
-                </div>
-               
-                <div class="benefit-item">
-                    <i class="fas fa-trophy"></i>
-                    <div class="benefit-content">
-                        <h4>Competitions</h4>
-                        <p>Participate in national and international space competitions</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="benefit-content">
-                        <h4>Career Opportunities</h4>
-                        <p>Access to internships and job opportunities in space sector</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-project-diagram"></i>
-                    <div class="benefit-content">
-                        <h4>Real Projects</h4>
-                        <p>Work on actual space missions and research projects</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="join-button-wrapper">
-                <a href="https://forms.gle/your-google-form-url" class="join-form-link" target="_blank">
-                    <i class="fas fa-paper-plane"></i>
-                    Apply Now
-                </a>
-            </div>
+        <div class="benefit-item">
+          <i class="fas fa-users"></i>
+          <div class="benefit-content">
+            <h4>Networking</h4>
+            <p>Connect with like-minded peers and industry professionals</p>
+          </div>
         </div>
-    </section>
-
-
-<footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-section about-us">
-                <h3>About Us</h3>
-                <div class="footer-content">
-                    <p>We are a dedicated community empowering students with knowledge in space technology, communication systems, and more. Our mission is to foster innovation and practical skills.</p>
-                </div>
-            </div>
-
-            <div class="footer-section quick-links collapsible">
-                <h3>Quick Links <span class="toggle-icon">+</span></h3>
-                <div class="footer-content">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#our-focus">Our Focus</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-section contact-info collapsible">
-                <h3>Contact Info <span class="toggle-icon">+</span></h3>
-                <div class="footer-content">
-                    <p><i class="fas fa-map-marker-alt"></i> Address: 123 Space Rd, Galaxy City, 45678</p>
-                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a></p>
-                    <p><i class="fas fa-phone-alt"></i> Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
-                </div>
-            </div>
-
-            <div class="footer-section social-media collapsible">
-                <h3>Follow Us <span class="toggle-icon">+</span></h3>
-                <div class="footer-content">
-                    <div class="social-icons">
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
+        <div class="benefit-item">
+          <i class="fas fa-trophy"></i>
+          <div class="benefit-content">
+            <h4>Competitions</h4>
+            <p>Participate in national and international space competitions</p>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Your Club Name. All Rights Reserved.</p>
+        <div class="benefit-item">
+          <i class="fas fa-briefcase"></i>
+          <div class="benefit-content">
+            <h4>Career Opportunities</h4>
+            <p>Access to internships and job opportunities in space sector</p>
+          </div>
         </div>
-    </footer>
+        <div class="benefit-item">
+          <i class="fas fa-project-diagram"></i>
+          <div class="benefit-content">
+            <h4>Real Projects</h4>
+            <p>Work on actual space missions and research projects</p>
+          </div>
+        </div>
+      </div>
+      <div class="join-button-wrapper">
+        <a href="https://forms.gle/your-google-form-url" class="join-form-link" target="_blank">
+          <i class="fas fa-paper-plane"></i>
+          Apply Now
+        </a>
+      </div>
+    </div>
+  </section>
+  <div id="footer-placeholder"></div>
 
-    <script src="script.js"></script>
+  <!-- JavaScript Files - Loaded at the end of the body for performance and dependency order -->
+  <!-- Always load data files BEFORE the scripts that consume that data -->
+
+  <!-- Execom Section Scripts -->
+  <script src="script/execom/execom.js"></script>
+  <script src="script/execom/app.js"></script>
+
+  <!-- Our Focus Section Scripts -->
+  <script src="script/focus/our-focus.js"></script> <!-- Ensure this filename is correct -->
+  <script src="script/focus/app.js"></script>
+
+  <!-- Projects Section Scripts -->
+  <script src="script/project/projects.js"></script>
+  <script src="script/project/app.js"></script>
+
+  <!-- Global / Utility Scripts -->
+  <script src="script.js"></script>
+
+  <!-- Footer Loading Script - Place this LAST as it inserts HTML after all other content is ready -->
+  <script src="script/footer/load-footer.js"></script>
+
 </body>
+
 </html>

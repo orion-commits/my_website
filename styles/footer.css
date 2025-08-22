@@ -1,0 +1,183 @@
+/* General Footer Styles */
+.site-footer {
+    background: linear-gradient(135deg, #0a0e17 0%, #1a1f3a 50%, #0f1525 100%); /* A dark, modern charcoal color */
+    color: #d1d1d6; /* Softer white for better readability */
+    padding-top: 40px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* On desktop, use a grid for a clean layout */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer-section {
+    padding: 10px 0;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-section.about-us p {
+    color: #a1a1a6;
+}
+
+/* Quick Links Styling */
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links ul li {
+    margin-bottom: 10px;
+}
+
+.quick-links ul li a {
+    color: #a1a1a6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.quick-links ul li a:hover {
+    color: #ffffff;
+}
+
+/* Contact Info and Social Media Icons */
+.contact-info p i,
+.social-media .social-icons a i {
+    margin-right: 12px;
+    color: #ffffff;
+}
+
+.contact-info p a {
+    color: #a1a1a6;
+    text-decoration: none;
+}
+.contact-info p a:hover{
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #d1d1d6;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 1px solid #3a3a3c;
+    font-size: 14px;
+    color: #a1a1a6;
+}
+
+/* --- Responsive Dropdown (Accordion) for Mobile --- */
+
+/* Hide the content and the toggle icon by default */
+.footer-content {
+    display: block; /* Visible by default on desktop */
+}
+
+.toggle-icon {
+    display: none; /* Hidden by default on desktop */
+}
+
+/* Styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Stack everything in a single column */
+        gap: 0;
+    }
+
+    .footer-section {
+        border-bottom: 1px solid #3a3a3c;
+        padding: 20px 0;
+    }
+
+    .footer-section:first-child {
+        /* Only apply top border if it's not the about-us section */
+        border-top: 1px solid #3a3a3c;
+    }
+
+    /* Keep about-us's content padding consistent */
+    .footer-section.about-us .footer-content {
+        padding-top: 20px;
+    }
+
+    .footer-section:last-of-type {
+        border-bottom: none;
+    }
+
+    .footer-section h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 0; /* Remove margin when collapsed */
+    }
+
+    /* The 'About Us' section should always be open on mobile, and not collapsible */
+    .footer-section.about-us h3 {
+        cursor: default; /* Remove pointer cursor */
+    }
+
+    /* Hide the toggle icon for the 'About Us' section on mobile */
+    .footer-section.about-us .toggle-icon {
+        display: none;
+    }
+
+    .footer-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, padding-top 0.4s ease;
+        padding-top: 0;
+    }
+
+    /* Style for the active/expanded state */
+    .footer-section.active .footer-content {
+        max-height: 500px; /* Adjust if your content is longer */
+        padding-top: 20px; /* Add space when expanded */
+    }
+
+    /* Show and style the toggle icon on mobile for collapsible sections */
+    .collapsible .toggle-icon { /* Only show for sections with 'collapsible' class */
+        display: inline-block;
+        font-size: 24px;
+        font-weight: 300;
+        transition: transform 0.4s ease;
+    }
+
+    /* Rotate icon when active */
+    /* The JS will handle adding/removing the 'active' class and rotating */
+    .footer-section.active .toggle-icon {
+        transform: rotate(45deg);
+    }
+}

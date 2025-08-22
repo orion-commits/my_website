@@ -1,0 +1,198 @@
+/* Enhanced Navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(10, 14, 23, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(136, 211, 206, 0.1);
+}
+
+#navbar.scrolled {
+  padding: 0.7rem 2rem;
+  background: rgba(10, 14, 23, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-bottom-color: rgba(136, 211, 206, 0.3);
+}
+
+#navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.logo img {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(136, 211, 206, 0.3));
+}
+
+.logo:hover img {
+  transform: rotate(15deg) scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(136, 211, 206, 0.6));
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.main-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #88d3ce 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sub-title {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #88d3ce;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.8;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+}
+
+#navbar ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(110, 69, 226, 0.2), rgba(136, 211, 206, 0.2));
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+#navbar ul li a:hover::before {
+  opacity: 1;
+}
+
+#navbar ul li a:hover {
+  color: #88d3ce;
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default on desktop */
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #88d3ce;
+  transform: scale(1.1);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  #navbar {
+    padding: 0.8rem 1rem; /* Adjust padding for smaller screens */
+  }
+
+  #navbar.scrolled {
+    padding: 0.5rem 1rem;
+  }
+
+  .main-title {
+    font-size: 1.5rem; /* Smaller logo text */
+  }
+
+  .sub-title {
+    font-size: 0.6rem;
+  }
+
+  #navbar .logo img {
+    height: 35px; /* Adjust logo size */
+    width: 45px;
+  }
+
+  #navbar ul {
+    /* Mobile menu styles */
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially off-screen */
+    width: 70%; /* Takes up 70% of screen width */
+    height: 100vh; /* Full viewport height */
+    background: rgba(10, 14, 23, 0.98); /* Dark background for menu */
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    padding: 6rem 2rem 2rem; /* Padding at top for logo, rest for links */
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s ease-out; /* Smooth slide-in transition */
+    gap: 1.5rem; /* Space between links */
+    align-items: flex-start; /* Align links to the left */
+  }
+
+  #navbar ul.active {
+    right: 0; /* Slide menu into view */
+  }
+
+  #navbar ul li {
+    width: 100%; /* Make list items take full width */
+  }
+
+  #navbar ul li a {
+    font-size: 1.2rem;
+    padding: 0.8rem 0; /* More padding for touch targets */
+    display: block; /* Make link block-level for full touch area */
+    text-align: left; /* Align text left */
+  }
+
+  #navbar ul li a::before {
+    display: none; /* Hide hover effect for mobile for cleaner look */
+  }
+  
+  #navbar ul li a:hover {
+    color: #88d3ce;
+    transform: none; /* Remove desktop hover transform */
+  }
+
+
+  .menu-toggle {
+    display: block; /* Show the hamburger icon */
+  }
+}

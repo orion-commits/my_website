@@ -1,0 +1,108 @@
+#space-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#space-section .bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+  z-index: -3;
+  filter: brightness(0.4) contrast(1.2);
+}
+
+#space-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(10, 14, 23, 0.8) 0%, 
+    rgba(110, 69, 226, 0.1) 30%, 
+    rgba(136, 211, 206, 0.1) 70%, 
+    rgba(10, 14, 23, 0.8) 100%);
+  z-index: -2;
+}
+
+#space-section .content {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  z-index: 2;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#space-section .quote {
+  font-size: 3rem;
+  font-weight: 300;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  line-height: 1.3;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #fff 0%, #88d3ce 50%, #6e45e2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(136, 211, 206, 0.3);
+}
+
+#space-section #join-btn {
+  background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(110, 69, 226, 0.3);
+}
+
+#space-section #join-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+#space-section #join-btn:hover::before {
+  left: 100%;
+}
+
+#space-section #join-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(110, 69, 226, 0.5);
+}

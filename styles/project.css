@@ -1,0 +1,346 @@
+/* --- Projects Section --- */
+#projects {
+    padding: 120px 20px;
+    background-color: var(--bg-dark-primary);
+    /* Ensure --bg-dark-primary is defined */
+    position: relative;
+    overflow: hidden;
+    color: white;
+    /* Ensure text color is visible */
+}
+
+/* Background effect for projects section */
+#projects::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 60%;
+    height: 60%;
+    max-width: 1000px;
+    z-index: 0;
+}
+
+.projects-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.projects-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 100%);
+    /* Ensure accents are defined */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.projects-header .projects-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    /* Ensure --text-secondary is defined */
+}
+
+/* --- Projects Container (Horizontal Scroll) --- */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    /* Arranges project cards in a row */
+    gap: 40px;
+    /* Space between project cards */
+    padding: 20px;
+    /* Padding for visual spacing and scrollbar */
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+
+    /* Key properties for horizontal scrolling */
+    overflow-x: auto;
+    /* Enables horizontal scrolling when content overflows */
+    white-space: nowrap;
+    /* Prevents project cards from wrapping to a new line */
+
+    /* Scrollbar styling for Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-accent) var(--bg-dark-secondary);
+    /* Customize scrollbar colors */
+}
+
+/* Custom scrollbar styling for WebKit browsers (Chrome, Safari, Edge) */
+.projects-container::-webkit-scrollbar {
+    height: 8px;
+    /* Height of the horizontal scrollbar */
+}
+
+.projects-container::-webkit-scrollbar-track {
+    background: var(--bg-dark-secondary);
+    /* Color of the scrollbar track */
+    border-radius: 10px;
+}
+
+.projects-container::-webkit-scrollbar-thumb {
+    background: var(--primary-accent);
+    /* Color of the scrollbar thumb */
+    border-radius: 10px;
+}
+
+
+/* --- Project Card Styling --- */
+.project-card {
+    background: rgba(26, 31, 58, 0.6);
+    /* Semi-transparent base for glass effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    width: 350px;
+    /* Fixed width for each project card, adjust as needed */
+    flex: 0 0 auto;
+    /* Prevents cards from growing/shrinking, crucial for horizontal scroll */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease-out, transform 0.6s ease-out;
+    border: 1px solid rgba(136, 211, 206, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+    /* Animation setup: Initially hidden */
+    opacity: 0;
+    transform: translateY(40px);
+    white-space: normal;
+    /* Allow text inside card to wrap */
+}
+
+/* This class will be added by JavaScript to make the card visible and animate it */
+.project-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delays for project cards */
+.project-card:nth-child(1).is-visible {
+    transition-delay: 0.1s;
+}
+
+.project-card:nth-child(2).is-visible {
+    transition-delay: 0.2s;
+}
+
+.project-card:nth-child(3).is-visible {
+    transition-delay: 0.3s;
+}
+
+.project-card:nth-child(4).is-visible {
+    transition-delay: 0.4s;
+}
+
+.project-card:nth-child(5).is-visible {
+    transition-delay: 0.5s;
+}
+
+.project-card:nth-child(6).is-visible {
+    transition-delay: 0.6s;
+}
+
+
+.project-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(110, 69, 226, 0.4);
+    border-color: rgba(136, 211, 206, 0.4);
+}
+
+/* --- Project Image Area --- */
+.project-image {
+    position: relative;
+    height: 200px;
+    /* Fixed height for consistency */
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+    filter: brightness(0.8) grayscale(0.2);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+    filter: brightness(1) grayscale(0);
+}
+
+/* "Ongoing" Tag */
+/* "Ongoing" Tag */
+.ongoing-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent)); /* Using accent colors */
+    color: white;
+    padding: 8px 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom-left-radius: 10px;
+    transform: rotate(45deg) translate(20%, -20%); /* Angle the tag */
+    transform-origin: 100% 0%; /* Rotate from top right corner */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    /* This positioning and transform is for the angled look */
+    top: -10px; /* Adjust if needed to fit perfectly */
+    right: -30px; /* Adjust if needed to fit perfectly */
+    width: 120px; /* Ensure enough width for text after rotation */
+    text-align: center;
+}
+
+
+/* Project Overlay with Links */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(110, 69, 226, 0.7);
+    /* Overlay color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 20px;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Project Info --- */
+.project-info {
+    padding: 25px;
+    text-align: left;
+    /* Align text left within the info block */
+    background: rgba(26, 31, 58, 0.8);
+    /* Slightly darker background for info */
+    border-top: 1px solid rgba(136, 211, 206, 0.1);
+}
+
+.project-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.project-info .project-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow tags to wrap if many */
+    gap: 10px;
+}
+
+.project-tags .tag {
+    background: var(--bg-dark-secondary);
+    /* Darker background for tags */
+    color: var(--primary-accent);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(136, 211, 206, 0.1);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.project-tags .tag:hover {
+    background: var(--primary-accent);
+    color: var(--bg-dark-primary);
+}
+
+/* --- Call to Action Button --- */
+.projects-cta {
+    text-align: center;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.projects-btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 30px rgba(110, 69, 226, 0.3);
+}
+
+.projects-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(110, 69, 226, 0.5);
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .project-card {
+        width: 300px;
+        /* Slightly smaller cards on mobile */
+    }
+
+    .projects-header h2 {
+        font-size: 2rem;
+    }
+
+    .projects-header .projects-intro {
+        font-size: 1rem;
+    }
+}
