@@ -57,7 +57,7 @@
 }
 
 #space-section .quote {
-  font-size: 3rem;
+  font-size: 3rem; /* Desktop size */
   font-weight: 300;
   max-width: 900px;
   margin: 0 auto 30px auto;
@@ -74,9 +74,9 @@
   background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
   color: white;
   border: none;
-  padding: 15px 40px;
+  padding: 15px 40px; /* Desktop size */
   border-radius: 50px;
-  font-size: 1.3rem;
+  font-size: 1.3rem; /* Desktop size */
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   letter-spacing: 1px;
@@ -105,4 +105,34 @@
 #space-section #join-btn:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 20px 40px rgba(110, 69, 226, 0.5);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  #space-section .content {
+    padding: 15px; /* Reduce content padding on smaller screens */
+  }
+
+  #space-section .quote {
+    font-size: 1.6rem; /* Further reduced font size for the quote on phones */
+    margin-bottom: 20px; /* Adjust margin */
+    max-width: 90%; /* Ensure it doesn't span full width unnecessarily */
+  }
+
+  #space-section #join-btn {
+    padding: 12px 30px; /* Smaller padding for the button */
+    font-size: 1rem; /* Smaller font size for the button */
+  }
+}
+
+@media (max-width: 480px) {
+  #space-section .quote {
+    font-size: 1.3rem; /* Even smaller font size for very small phones */
+    line-height: 1.4;
+  }
+
+  #space-section #join-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
 }
