@@ -1,3 +1,4 @@
+/* --- Execom Section --- */
 #execom {
   text-align: center;
   padding: 120px 20px;
@@ -20,13 +21,13 @@
 }
 
 #execom h2 {
-  font-size: 3.5rem;
+  font-size: 3.5rem; 
   margin-bottom: 60px;
   font-weight: 800;
   background: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-clip: text; /* Fallback */
   text-transform: uppercase;
   letter-spacing: 3px;
   font-family: 'Orbitron', sans-serif;
@@ -48,37 +49,37 @@
   box-shadow: 0 0 20px rgba(110, 69, 226, 0.5);
 }
 
-/* * EDITS FOR HORIZONTAL SCROLLING 
- * These changes enable the gallery behavior
- */
+/* --- Execom Container (Horizontal Scroll) --- */
 .execom-container {
   display: flex; /* Arranges members in a row */
+  justify-content: center; /* Centers items when they don't overflow */
   gap: 40px; /* Space between members */
+  padding: 20px; /* Padding for visual spacing and scrollbar */
   margin-bottom: 50px;
   position: relative;
   z-index: 1;
   
-  /* The key properties for horizontal scrolling */
+  /* Key properties for horizontal scrolling */
   overflow-x: auto; /* Adds a horizontal scrollbar if content overflows */
   white-space: nowrap; /* Prevents member cards from wrapping */
   
   /* Optional: Styles for the scrollbar */
-  padding-bottom: 20px;
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #88d3ce #222734; /* For Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-accent) var(--bg-dark-secondary); /* Customize scrollbar colors */
 }
 
+/* Custom scrollbar styling for WebKit browsers (Chrome, Safari, Edge) */
 .execom-container::-webkit-scrollbar {
-  height: 8px;
+  height: 8px; /* Height of the horizontal scrollbar */
 }
 
 .execom-container::-webkit-scrollbar-track {
-  background: #222734;
+  background: var(--bg-dark-secondary); /* Color of the scrollbar track */
   border-radius: 10px;
 }
 
 .execom-container::-webkit-scrollbar-thumb {
-  background: #88d3ce;
+  background: var(--primary-accent); /* Color of the scrollbar thumb */
   border-radius: 10px;
 }
 
@@ -87,16 +88,35 @@
   position: relative;
   background: rgba(22, 27, 34, 0.4);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
   overflow: hidden;
-  width: 320px;
+  width: 320px; /* Fixed width for each member card */
+  flex: 0 0 auto; /* Prevents the card from growing or shrinking */
   transition: all 0.5s ease;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   border: 1px solid rgba(136, 211, 206, 0.1);
 
-  /* Prevents the card from shrinking and allows overflow */
-  flex: 0 0 auto;
+  /* Animation setup: Initially hidden */
+  opacity: 0;
+  transform: translateY(40px);
+  white-space: normal; /* Allow text inside card to wrap */
 }
+
+/* This class will be added by JavaScript to make the card visible and animate it */
+.execom-member.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delays for execom members */
+.execom-member:nth-child(1).is-visible { transition-delay: 0.1s; }
+.execom-member:nth-child(2).is-visible { transition-delay: 0.2s; }
+.execom-member:nth-child(3).is-visible { transition-delay: 0.3s; }
+.execom-member:nth-child(4).is-visible { transition-delay: 0.4s; }
+.execom-member:nth-child(5).is-visible { transition-delay: 0.5s; }
+.execom-member:nth-child(6).is-visible { transition-delay: 0.6s; }
+
 
 .execom-member:hover {
   transform: translateY(-15px) scale(1.02);
@@ -168,7 +188,7 @@
 }
 
 .member-info h3 {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Desktop size */
   margin: 10px 0 8px;
   color: #f1f1f1;
   font-family: 'Orbitron', sans-serif;
@@ -176,9 +196,89 @@
 }
 
 .member-info p {
-  font-size: 1rem;
+  font-size: 1rem; /* Desktop size */
   color: #88d3ce;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* --- Mobile Responsiveness for Execom Section --- */
+@media (max-width: 768px) {
+  #execom {
+      padding: 80px 20px; /* Adjust section padding */
+  }
+
+  #execom h2 {
+    font-size: 2.2rem; /* Reduced heading size for h2 */
+    margin-bottom: 30px;
+  }
+
+  .execom-container {
+    padding: 10px; /* Adjust padding for scrollable area */
+    gap: 20px; /* Smaller gap between cards */
+  }
+
+  .execom-member {
+    width: 280px; /* Slightly smaller cards on mobile */
+    min-width: 250px; /* Ensure cards don't get too small */
+  }
+
+  .execom-member img {
+    height: 280px; /* Adjust image height */
+  }
+
+  .member-info h3 {
+    font-size: 1.2rem; /* Reduced member name h3 size */
+  }
+
+  .member-info p {
+    font-size: 0.85rem; /* Reduced member title paragraph size */
+  }
+
+  .social-links a {
+    width: 50px; /* Smaller social icons */
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+    #execom {
+        padding: 60px 15px;
+    }
+
+    #execom h2 {
+        font-size: 1.8rem; /* Further reduced heading size for h2 */
+        margin-bottom: 25px;
+    }
+
+    .execom-container {
+        padding: 5px;
+        gap: 15px;
+    }
+
+    .execom-member {
+        width: 240px; /* Further reduced card width */
+        min-width: 200px;
+    }
+
+    .execom-member img {
+        height: 240px; /* Further reduced image height */
+    }
+
+    .member-info h3 {
+        font-size: 1rem; /* Further reduced member name h3 size */
+    }
+
+    .member-info p {
+        font-size: 0.8rem; /* Further reduced member title paragraph size */
+    }
+
+    .social-links a {
+        width: 40px; /* Further reduced social icons */
+        height: 40px;
+        font-size: 1.2rem;
+        gap: 15px;
+    }
 }
