@@ -29,13 +29,16 @@
 }
 
 .projects-header h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 100%);
-    /* Ensure accents are defined */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 60px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: "Orbitron", sans-serif;
+  display: inline-block;
 }
 
 .projects-header .projects-intro {
