@@ -1,126 +1,147 @@
-
-.section-hidden{
-   background: linear-gradient(135deg, #0a0e17 0%, #1a1f3a 50%, #0f1525 100%);
-   padding: 4rem 2rem;
-   
+.section-hidden {
+  background: linear-gradient(135deg, #0a0e17 0%, #1a1f3a 50%, #0f1525 100%);
+  padding: 4rem 2rem;
 }
 
+/* Main Section Styling */
+#join-us h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 60px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: "Orbitron", sans-serif;
+  display: inline-block;
+}
 
-        /* Main Section Styling */
-        .join-header {
-         
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+#join-us h3 {
+  margin-bottom: 60px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: "Orbitron", sans-serif;
+  display: inline-block;
+}
 
-        .join-header h2 {
-            font-size: 2.5rem;
-            color: var(--heading-color);
-            margin-bottom: 0.5rem;
-        }
+.join-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-        .join-header .join-intro {
-            font-size: 1rem;
-            color: var(--text-color);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Benefits Grid Styling */
-        .join-benefits {
-            background-color: var(--card-bg-color);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid #3d3d5c;
-            text-align: center;
-        }
-        
-        .join-benefits h3 {
-            font-size: 1.8rem;
-            color: var(--heading-color);
-            margin-bottom: 2rem;
-        }
+.join-header h2 {
+  font-size: 2.5rem;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+}
 
-        .benefits-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
+.join-header .join-intro {
+  font-size: 1rem;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            text-align: left;
-            padding: 1rem;
-            background-color: #26263e;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
+/* Benefits Grid Styling */
+.join-benefits {
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid #3d3d5c;
+  text-align: center;
+}
 
-        .benefit-item:hover {
-            transform: translateY(-5px);
-        }
+.join-benefits h3 {
+  font-size: 1.8rem;
+  color: var(--heading-color);
+  margin-bottom: 2rem;
+}
 
-        .benefit-item i {
-            font-size: 2rem;
-            color: var(--heading-color);
-            margin-right: 1rem;
-        }
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
 
-        .benefit-content h4 {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            margin: 0 0 0.25rem 0;
-        }
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  padding: 1rem;
+  background-color: #26263e;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
 
-        .benefit-content p {
-            font-size: 0.9rem;
-            color: #b0b0d0;
-            margin: 0;
-        }
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
 
-        /* Join Button Styling */
-        .join-button-wrapper {
-            text-align: center;
-        }
-        
-        .join-form-link {
-            background-color: var(--heading-color);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            box-shadow: 0 5px 15px rgba(159, 140, 255, 0.4);
-        }
+.benefit-item i {
+  font-size: 2rem;
+  color: var(--heading-color);
+  margin-right: 1rem;
+}
 
-        .join-form-link:hover {
-            transform: translateY(-3px);
-            background-color: #8c78cc;
-        }
+.benefit-content h4 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 0 0 0.25rem 0;
+}
 
-        .join-form-link i {
-            font-size: 1.2rem;
-        }
+.benefit-content p {
+  font-size: 0.9rem;
+  color: #b0b0d0;
+  margin: 0;
+}
 
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 600px) {
-            .section-hidden {
-                padding: 1rem;
-            }
+/* Join Button Styling */
+.join-button-wrapper {
+  text-align: center;
+}
 
-            .benefits-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .join-benefits {
-                padding: 1.5rem;
-            }
-        }
+.join-form-link {
+  background-color: var(--heading-color);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(159, 140, 255, 0.4);
+}
+
+.join-form-link:hover {
+  transform: translateY(-3px);
+  background-color: #8c78cc;
+}
+
+.join-form-link i {
+  font-size: 1.2rem;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .section-hidden {
+    padding: 1rem;
+  }
+
+  .benefits-list {
+    grid-template-columns: 1fr;
+  }
+
+  .join-benefits {
+    padding: 1.5rem;
+  }
+}
