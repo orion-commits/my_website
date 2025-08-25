@@ -124,6 +124,64 @@
   color: #88d3ce;
   transform: scale(1.1);
 }
+/* Add these new styles or modify your existing ones */
+
+/* The dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* The dropdown content, hidden by default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the parent link */
+  left: 0;
+  min-width: 180px;
+  background-color: rgba(22, 27, 34, 0.9); /* Translucent background */
+  backdrop-filter: blur(10px); /* Adds a cool blur effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  border-radius: 8px;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Class to show the dropdown content */
+.dropdown-content.show {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(136, 211, 206, 0.1);
+  color: #88d3ce;
+}
+
+/* Style for the chevron icon */
+.dropdown .fas.fa-chevron-down {
+  transition: transform 0.3s ease;
+}
+
+/* Rotate the icon when the dropdown is open */
+.dropdown.active .fas.fa-chevron-down {
+  transform: rotate(180deg);
+}
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
@@ -194,5 +252,50 @@
 
   .menu-toggle {
     display: block; /* Show the hamburger icon */
+  }
+  
+  /* Style the dropdown menu item */
+  #menu .dropdown {
+    width: 100%; /* Ensure the dropdown takes full width */
+  }
+
+  /* Style the main dropdown link */
+  #menu .dropdown > a {
+    position: relative;
+    padding-right: 40px; /* Make space for the icon */
+  }
+
+  /* Style the chevron icon in the mobile menu */
+  #menu .dropdown > a .fas.fa-chevron-down {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  /* The actual dropdown content */
+  #menu .dropdown-content {
+    position: static; /* Change from absolute to static */
+    background: none; /* Remove the background for a cleaner look */
+    box-shadow: none;
+    backdrop-filter: none;
+    overflow: hidden;
+    max-height: 0; /* Initially collapse the menu */
+    padding: 0;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  }
+
+  /* Style the sub-menu links */
+  #menu .dropdown-content a {
+    padding-left: 40px; /* Indent the sub-menu links */
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* When the dropdown is active, reveal it */
+  #menu .dropdown.active .dropdown-content {
+    max-height: 200px; /* A value large enough to hold all items */
+    padding-top: 10px;
   }
 }

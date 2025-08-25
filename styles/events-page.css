@@ -4,20 +4,15 @@
   box-sizing: border-box;
 }
 
-body,
-html {
-  background: linear-gradient(135deg, #0a0e17 0%, #1a1f3a 50%, #0f1525 100%);
-  height: 100%;
-  font-family: "Poppins", sans-serif;
-  color: #fff;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
 #events {
   text-align: center;
   padding: 120px 20px;
   position: relative;
+  background: linear-gradient(135deg, #0a0e17 0%, #1a1f3a 50%, #0f1525 100%);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 #events h2 {
@@ -35,28 +30,37 @@ html {
 
 .events-container {
   display: flex;
+  flex-direction: column; /* This is the key change */
   gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center; /* This centers the single column of cards */
 }
 
 .events-card {
-  width: 320px;
+  width: 100%;
+  max-width: 900px; /* Limits the width of each card on a large screen */
+  display: flex;
   border-radius: 20px;
   background: rgba(22, 27, 34, 0.6);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(136, 211, 206, 0.1);
-  overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .events-card img {
-  width: 100%;
+  width: 40%;
   height: 240px;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
+}
+
+.event-card p {
+  /* Added a rule for the paragraph element to style it */
+  font-size: 1rem;
+  color: #c0c0c0;
 }
 
 .events-card:hover {
