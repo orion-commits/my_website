@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/gallary.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/loading.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="spinner"></div>
+        <div class="loading-text">ORION LOADING...</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" height="40" width="50" alt="ORION Logo">
+            <div class="logo-text">
+                <span class="main-title">ORION</span>
+                <span class="sub-title">Govt. Engineering College, Wayanad</span>
+            </div>
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul id="menu">
+            <li><a href="index.html#space-section">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#our-focus">Our Focus</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallary.html">Gallery</a></li>
+            <li><a href="execom.html">Execom</a></li>
+            <li><a href="index.html/join-us">Join Us</a></li>
+        </ul>
+    </nav>
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <!-- Cards will be injected by JS -->
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Main js script -->
+    <script src="script.js"></script>
+
+    <!-- Gallery css -->
+    <script src="script/gallary/gallary.js"></script>
+
+    <!-- Footer Loading Script - Place this LAST as it inserts HTML after all other content is ready -->
+    <script src="script/footer/load-footer.js"></script>
+</body>
+
+</html>

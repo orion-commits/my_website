@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background: linear-gradient(135deg, #0a0e17 0%, #1a1f3a 50%, #0f1525 100%);
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#events {
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+}
+
+#events h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 60px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: "Orbitron", sans-serif;
+  display: inline-block;
+}
+
+.events-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.events-card {
+  width: 320px;
+  border-radius: 20px;
+  background: rgba(22, 27, 34, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(136, 211, 206, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.events-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.events-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(110, 69, 226, 0.6);
+  border-color: rgba(136, 211, 206, 0.4);
+}
+
+.events-card:hover img {
+  transform: scale(1.1);
+}
+
+.events-card .info {
+  padding: 15px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.events-card .info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #f1f1f1;
+  font-family: "Orbitron", sans-serif;
+}
+
+.events-card .info p {
+  font-size: 0.85rem;
+  color: #88d3ce;
+}
+
+.events-cta {
+    text-align: center;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.events-btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 30px rgba(110, 69, 226, 0.3);
+}
+
+.events-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(110, 69, 226, 0.5);
+}
+
+@media (max-width: 768px) {
+  .events-card {
+    width: 240px;
+  }
+}
