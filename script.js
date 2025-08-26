@@ -43,11 +43,11 @@ const bgVideo = document.getElementById('bgVideo');
 const fallbackImage = document.querySelector('.fallback-image');
 
 // Check if video can play
-bgVideo.addEventListener('error', () => {
-  console.log('Video failed to load, using fallback');
-  fallbackImage.style.display = 'block';
-  bgVideo.style.display = 'none';
-});
+// bgVideo.addEventListener('error', () => {
+//   console.log('Video failed to load, using fallback');
+//   fallbackImage.style.display = 'block';
+//   bgVideo.style.display = 'none';
+// });
 
 // Try to play video with error handling
 function setupVideo() {
@@ -75,19 +75,19 @@ function setupVideo() {
   }
 }
 
-// Wait for video to load
-bgVideo.addEventListener('loadeddata', () => {
-  setupVideo();
-});
+// // Wait for video to load
+// bgVideo.addEventListener('loadeddata', () => {
+//   setupVideo();
+// });
 
 // If video takes too long to load
-setTimeout(() => {
-  if (bgVideo.readyState < 3) { // HAVE_FUTURE_DATA
-    console.log('Video loading timeout, using fallback');
-    fallbackImage.style.display = 'block';
-    bgVideo.style.display = 'none';
-  }
-}, 5000);
+// setTimeout(() => {
+//   if (bgVideo.readyState < 3) { // HAVE_FUTURE_DATA
+//     console.log('Video loading timeout, using fallback');
+//     fallbackImage.style.display = 'block';
+//     bgVideo.style.display = 'none';
+//   }
+// }, 5000);
 
 // Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');

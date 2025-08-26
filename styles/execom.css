@@ -84,6 +84,32 @@
   border-radius: 10px;
 }
 
+.execom-cta {
+    text-align: center;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.execom-btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 30px rgba(110, 69, 226, 0.3);
+}
+
+.execom-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(110, 69, 226, 0.5);
+}
 
 .execom-member {
   position: relative;

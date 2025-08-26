@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   const execomContainer = document.getElementById("execom-container");
 
   // Function to create a single member's HTML card
@@ -25,11 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Check if execomMembers is defined (from execom.js)
-  if (typeof execomMembers !== 'undefined' && execomMembers.length > 0) {
-    execomMembers.forEach(member => {
+  if (typeof execomMembers !== "undefined" && execomMembers.length > 0) {
+    execomMembers.forEach((member) => {
       createMemberCard(member);
     });
-    console.log(`DEBUG: Rendered ${execomMembers.length} members into the container.`);
+    console.log(
+      `DEBUG: Rendered ${execomMembers.length} members into the container.`
+    );
   } else {
     console.error("ERROR: execomMembers array is not defined or is empty.");
   }
