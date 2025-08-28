@@ -47,14 +47,16 @@
   cursor: pointer;
   justify-content: center;
   padding: 1rem;
+  overflow: hidden;
 }
 
-.events-card img {
+.event-image {
   width: 40%;
-  height: 240px;
-  object-fit: cover;
+  height: auto;
   display: block;
   transition: transform 0.3s ease;
+  object-fit: cover;
+  filter: grayscale(0.3) brightness(0.9);
 }
 
 .event-card p {
