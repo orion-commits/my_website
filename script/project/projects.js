@@ -22,7 +22,7 @@ const projects = [
   {
     title: "PROJECT ATL",
     description: "it is a humanitarian projects we take classes for school students abount electronics, microcontrollers etc.. we guide them to develop their technical skills for the IT MELA.",
-    image: "assets/projects/project-4.png",
+    image: "assets/projects/project-4.avif",
     tags: ["Teaching", "leadership", "technical knowledge", "connections"],
     isOngoing: true,
     liveLink: "#",
