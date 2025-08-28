@@ -10,6 +10,15 @@
   scroll-behavior: smooth;
 }
 
+/* **FIX**: Define CSS Variables (Place this in your main stylesheet) */
+:root {
+  --primary-accent: #6e45e2;
+  --secondary-accent: #88d3ce;
+  --text-secondary: #c0c0c0;
+  --bg-dark-secondary: rgba(22, 27, 34, 0.6);
+  --bg-dark-primary: #0a0e17;
+}
+
 /* Background effect for projects section */
 #projects::before {
   content: "";
@@ -33,7 +42,7 @@
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin-bottom: 60px;
   font-weight: 800;
-  background: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
+  background: linear-gradient(135deg, var(--secondary-accent) 0%, var(--primary-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
@@ -48,105 +57,62 @@
   max-width: 700px;
   margin: 0 auto;
   color: var(--text-secondary);
-  /* Ensure --text-secondary is defined */
 }
 
 /* --- Projects Container (Horizontal Scroll) --- */
 .projects-container {
   display: flex;
   justify-content: center;
-  /* Arranges project cards in a row */
   gap: 40px;
-  /* Space between project cards */
   padding: 20px;
-  /* Padding for visual spacing and scrollbar */
   margin-bottom: 50px;
   position: relative;
   z-index: 1;
 
-  /* Key properties for horizontal scrolling */
   overflow-x: auto;
-  /* Enables horizontal scrolling when content overflows */
   white-space: nowrap;
-  /* Prevents project cards from wrapping to a new line */
+  -webkit-overflow-scrolling: touch; /* Improves smooth scrolling on iOS */
 
-  /* Scrollbar styling for Firefox */
+  /* **FIX**: Consistent scrollbar styling */
   scrollbar-width: thin;
-  scrollbar-color: var(--primary-accent) var(--bg-dark-secondary);
-  /* Customize scrollbar colors */
+  scrollbar-color: var(--primary-accent) rgba(26, 31, 58, 0.4);
 }
 
-/* Custom scrollbar styling for WebKit browsers (Chrome, Safari, Edge) */
 .projects-container::-webkit-scrollbar {
   height: 8px;
-  /* Height of the horizontal scrollbar */
 }
 
 .projects-container::-webkit-scrollbar-track {
-  background: var(--bg-dark-secondary);
-  /* Color of the scrollbar track */
+  background: rgba(26, 31, 58, 0.4);
   border-radius: 10px;
 }
 
 .projects-container::-webkit-scrollbar-thumb {
   background: var(--primary-accent);
-  /* Color of the scrollbar thumb */
   border-radius: 10px;
 }
 
 /* --- Project Card Styling --- */
 .project-card {
   background: rgba(26, 31, 58, 0.6);
-  /* Semi-transparent base for glass effect */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
   overflow: hidden;
   width: 350px;
-  /* Fixed width for each project card, adjust as needed */
   flex: 0 0 auto;
-  /* Prevents cards from growing/shrinking, crucial for horizontal scroll */
-  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease-out,
-    transform 0.6s ease-out;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease-out;
   border: 1px solid rgba(136, 211, 206, 0.2);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 
-  /* Animation setup: Initially hidden */
   opacity: 0;
   transform: translateY(40px);
-  white-space: normal;
-  /* Allow text inside card to wrap */
+  white-space: normal; /* **FIX**: Allows text to wrap normally inside the card */
 }
 
-/* This class will be added by JavaScript to make the card visible and animate it */
 .project-card.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Staggered animation delays for project cards */
-.project-card:nth-child(1).is-visible {
-  transition-delay: 0.1s;
-}
-
-.project-card:nth-child(2).is-visible {
-  transition-delay: 0.2s;
-}
-
-.project-card:nth-child(3).is-visible {
-  transition-delay: 0.3s;
-}
-
-.project-card:nth-child(4).is-visible {
-  transition-delay: 0.4s;
-}
-
-.project-card:nth-child(5).is-visible {
-  transition-delay: 0.5s;
-}
-
-.project-card:nth-child(6).is-visible {
-  transition-delay: 0.6s;
 }
 
 .project-card:hover {
@@ -159,7 +125,6 @@
 .project-image {
   position: relative;
   height: 200px;
-  /* Fixed height for consistency */
   overflow: hidden;
 }
 
@@ -177,45 +142,32 @@
   filter: brightness(1) grayscale(0);
 }
 
-/* "Ongoing" Tag */
-/* "Ongoing" Tag */
+/* **FIX**: Ongoing Tag - Use a more reliable positioning method */
 .ongoing-tag {
   position: absolute;
-  top: 0;
-  right: 0;
-  background: linear-gradient(
-    135deg,
-    var(--secondary-accent),
-    var(--primary-accent)
-  ); /* Using accent colors */
+  top: 15px; /* Adjust top and right to place it neatly */
+  right: 15px;
+  background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
   color: white;
-  padding: 8px 25px;
-  font-size: 0.85rem;
+  padding: 6px 16px;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  border-bottom-left-radius: 10px;
-  transform: rotate(45deg) translate(20%, -20%); /* Angle the tag */
-  transform-origin: 100% 0%; /* Rotate from top right corner */
+  border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   z-index: 10;
-  /* This positioning and transform is for the angled look */
-  top: -10px; /* Adjust if needed to fit perfectly */
-  right: -30px; /* Adjust if needed to fit perfectly */
-  width: 120px; /* Ensure enough width for text after rotation */
-  text-align: center;
 }
 
 /* Project Overlay with Links */
 .project-overlay {
-    padding: 1rem;
+  padding: 1rem;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(110, 69, 226, 0.7);
-  /* Overlay color */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,9 +209,7 @@
 .project-info {
   padding: 25px;
   text-align: left;
-  /* Align text left within the info block */
   background: rgba(26, 31, 58, 0.8);
-  /* Slightly darker background for info */
   border-top: 1px solid rgba(136, 211, 206, 0.1);
 }
 
@@ -280,13 +230,11 @@
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  /* Allow tags to wrap if many */
   gap: 10px;
 }
 
 .project-tags .tag {
   background: var(--bg-dark-secondary);
-  /* Darker background for tags */
   color: var(--primary-accent);
   padding: 8px 15px;
   border-radius: 20px;
@@ -314,11 +262,7 @@
 .projects-btn {
   padding: 15px 40px;
   font-size: 1.1rem;
-  background: linear-gradient(
-    135deg,
-    var(--secondary-accent),
-    var(--primary-accent)
-  );
+  background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
   border: none;
   border-radius: 50px;
   color: white;
@@ -344,7 +288,6 @@
 
   .project-card {
     width: 300px;
-    /* Slightly smaller cards on mobile */
   }
 
   .projects-header h2 {
