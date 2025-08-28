@@ -10,15 +10,6 @@
   scroll-behavior: smooth;
 }
 
-/* **FIX**: Define CSS Variables (Place this in your main stylesheet) */
-:root {
-  --primary-accent: #6e45e2;
-  --secondary-accent: #88d3ce;
-  --text-secondary: #c0c0c0;
-  --bg-dark-secondary: rgba(22, 27, 34, 0.6);
-  --bg-dark-primary: #0a0e17;
-}
-
 /* Background effect for projects section */
 #projects::before {
   content: "";
@@ -42,7 +33,7 @@
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin-bottom: 60px;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--secondary-accent) 0%, var(--primary-accent) 100%);
+  background: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
@@ -57,57 +48,39 @@
   max-width: 700px;
   margin: 0 auto;
   color: var(--text-secondary);
+  /* Ensure --text-secondary is defined */
 }
 
-/* --- Projects Container (Horizontal Scroll) --- */
+/* --- Projects Container (Grid Layout, Responsive) --- */
+.project-card {
+  background: rgba(26, 31, 58, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%; /* ✅ responsive inside grid */
+  max-width: 100%; /* ✅ prevent overflow */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  border: 1px solid rgba(136, 211, 206, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* --- Responsive Grid --- */
 .projects-container {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(260px, 1fr)
+  ); /* ✅ shrinks smoothly */
   gap: 40px;
   padding: 20px;
   margin-bottom: 50px;
   position: relative;
   z-index: 1;
-
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch; /* Improves smooth scrolling on iOS */
-
-  /* **FIX**: Consistent scrollbar styling */
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary-accent) rgba(26, 31, 58, 0.4);
-}
-
-.projects-container::-webkit-scrollbar {
-  height: 8px;
-}
-
-.projects-container::-webkit-scrollbar-track {
-  background: rgba(26, 31, 58, 0.4);
-  border-radius: 10px;
-}
-
-.projects-container::-webkit-scrollbar-thumb {
-  background: var(--primary-accent);
-  border-radius: 10px;
-}
-
-/* --- Project Card Styling --- */
-.project-card {
-  background: rgba(26, 31, 58, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  overflow: hidden;
-  width: 350px;
-  flex: 0 0 auto;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease-out;
-  border: 1px solid rgba(136, 211, 206, 0.2);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-
-  opacity: 0;
-  transform: translateY(40px);
-  white-space: normal; /* **FIX**: Allows text to wrap normally inside the card */
 }
 
 .project-card.is-visible {
@@ -116,15 +89,16 @@
 }
 
 .project-card:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 25px 50px rgba(110, 69, 226, 0.4);
-  border-color: rgba(136, 211, 206, 0.4);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(110, 69, 226, 0.45);
+  border-color: rgba(136, 211, 206, 0.45);
 }
 
 /* --- Project Image Area --- */
 .project-image {
   position: relative;
   height: 200px;
+  /* Fixed height for consistency */
   overflow: hidden;
 }
 
@@ -142,21 +116,33 @@
   filter: brightness(1) grayscale(0);
 }
 
-/* **FIX**: Ongoing Tag - Use a more reliable positioning method */
+/* "Ongoing" Tag */
+/* "Ongoing" Tag */
 .ongoing-tag {
   position: absolute;
-  top: 15px; /* Adjust top and right to place it neatly */
-  right: 15px;
-  background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-accent),
+    var(--primary-accent)
+  ); /* Using accent colors */
   color: white;
-  padding: 6px 16px;
-  font-size: 0.8rem;
+  padding: 8px 25px;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  border-radius: 5px;
+  border-bottom-left-radius: 10px;
+  transform: rotate(45deg) translate(20%, -20%); /* Angle the tag */
+  transform-origin: 100% 0%; /* Rotate from top right corner */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   z-index: 10;
+  /* This positioning and transform is for the angled look */
+  top: -10px; /* Adjust if needed to fit perfectly */
+  right: -30px; /* Adjust if needed to fit perfectly */
+  width: 120px; /* Ensure enough width for text after rotation */
+  text-align: center;
 }
 
 /* Project Overlay with Links */
@@ -168,6 +154,7 @@
   width: 100%;
   height: 100%;
   background: rgba(110, 69, 226, 0.7);
+  /* Overlay color */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -209,7 +196,9 @@
 .project-info {
   padding: 25px;
   text-align: left;
+  /* Align text left within the info block */
   background: rgba(26, 31, 58, 0.8);
+  /* Slightly darker background for info */
   border-top: 1px solid rgba(136, 211, 206, 0.1);
 }
 
@@ -230,11 +219,13 @@
 .project-tags {
   display: flex;
   flex-wrap: wrap;
+  /* Allow tags to wrap if many */
   gap: 10px;
 }
 
 .project-tags .tag {
   background: var(--bg-dark-secondary);
+  /* Darker background for tags */
   color: var(--primary-accent);
   padding: 8px 15px;
   border-radius: 20px;
@@ -262,7 +253,11 @@
 .projects-btn {
   padding: 15px 40px;
   font-size: 1.1rem;
-  background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
+  background: linear-gradient(
+    135deg,
+    var(--secondary-accent),
+    var(--primary-accent)
+  );
   border: none;
   border-radius: 50px;
   color: white;
@@ -279,22 +274,36 @@
   box-shadow: 0 15px 40px rgba(110, 69, 226, 0.5);
 }
 
-/* --- Responsive Design for Mobile --- */
+/* --- Mobile Friendly Adjustments --- */
 @media (max-width: 768px) {
   .projects-container {
-    padding: 10px;
+    grid-template-columns: 1fr; /* ✅ single column for mobile */
     gap: 20px;
+    padding: 15px;
   }
 
   .project-card {
-    width: 300px;
+    width: 100%; /* ✅ no fixed width */
+    max-width: 100%; /* ✅ keep it fluid */
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transform: none !important;
   }
 
-  .projects-header h2 {
-    font-size: 2rem;
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+/* --- Extra Small Screens (phones < 480px) --- */
+@media (max-width: 480px) {
+  .projects-container {
+    padding: 10px;
+    gap: 15px;
   }
 
-  .projects-header .projects-intro {
-    font-size: 1rem;
+  .project-card {
+    border-radius: 14px;
+    padding: 10px;
   }
 }
