@@ -1,7 +1,7 @@
 const eventsItems = [
   {
     title: "8 Day Boot-Camp (Phase 1)",
-    desc: "An 8-day hands-on journey into the world of communication engineering. <br> Covered: Basics of electronics, resistors, capacitors & communication systems (Days 1–2). <br> Next: Diving deeper each day, leading to the design and build of an antenna by the end of Phase One. <br> Learn by doing. <br><br> Build from basics to real engineering.",
+    desc: "An 8-day hands-on journey into the world of communication engineering. <br> Covered: Basics of electronics, resistors, capacitors & communication systems. <br> Next: Diving deeper each day, leading to the design and build of an antenna by the end of Phase 4.<br><br> Build from basics to real engineering.",
     image: "assets/gallery/2.jpeg",
   },
   {
