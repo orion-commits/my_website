@@ -1,6 +1,14 @@
 // execom.js
 
 const execomMembers = [
+    {
+    name: "Asst.Prof Vishnu Prasad",
+    title: "Faculty Advisor",
+    image: "assets/execom/vishnusir.png",
+    linkedin: "#",
+    github: "#",
+    instagram: "#"
+  },
   {
     name: "Sona Krishna S",
     title: "Chairperson",
