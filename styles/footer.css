@@ -92,12 +92,32 @@
 /* Footer Bottom Bar */
 .footer-bottom {
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    border-top: 1px solid #3a3a3c;
+    padding: 15px 0;
+    color: #ccc; /* match your footer text color */
     font-size: 14px;
-    color: #a1a1a6;
 }
+
+.footer-bottom .made-with {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: #ddd; /* softer than bright white */
+}
+
+.footer-bottom .heart {
+    color: #e25555; /* nice red */
+}
+
+.footer-bottom a {
+    color: #00bcd4; /* orion blue / cyan tone */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
 
 /* --- Responsive Dropdown (Accordion) for Mobile --- */
 

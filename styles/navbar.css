@@ -109,6 +109,60 @@
   transform: translateY(-2px);
 }
 
+/* --- Always Glowing/Twinkling Button --- */
+
+/* Step 1: Define the animation */
+@keyframes glowing-pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(110, 69, 226, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(110, 69, 226, 0.7), 0 0 40px rgba(136, 211, 206, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(110, 69, 226, 0.4);
+  }
+}
+
+.join-us {
+  /* ... (Existing styles for the button) ... */
+  background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+
+  /* Step 2: Apply the animation */
+  animation: glowing-pulse 2s infinite ease-in-out;
+}
+
+.join-us::before {
+  /* The shimmer effect on hover, unchanged */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.join-us:hover::before {
+  left: 100%;
+}
+
+.join-us:hover {
+  /* Keep the hover effect for a stronger glow on interaction */
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 40px rgba(110, 69, 226, 0.7), 0 0 60px rgba(136, 211, 206, 0.5);
+}
 .menu-toggle {
   display: none; /* Hidden by default on desktop */
   font-size: 1.5rem;

@@ -1,10 +1,15 @@
+/* General reset and base styles (keep these as they are) */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* --- Events Section Container --- */
 #events {
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
   text-align: center;
   padding: 120px 20px;
   position: relative;
@@ -28,71 +33,96 @@
   display: inline-block;
 }
 
+/* --- Events Container (for single-column layout) --- */
 .events-container {
   display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column; /* Ensures one card per line */
+  gap: 60px; /* Increased gap between cards for better separation */
+  align-items: center; /* Centers the column of cards */
+  max-width: 1200px; /* Limit container width for better readability */
+  margin: 0 auto; /* Center the container itself */
 }
 
+/* --- Individual Event Card --- */
 .events-card {
-  width: 320px;
-  border-radius: 20px;
-  background: rgba(22, 27, 34, 0.6);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(136, 211, 206, 0.1);
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: pointer;
-}
-
-.events-card img {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
+  max-width: 900px; /* Max width for each card on larger screens */
+  display: flex; /* Flex container for image and text */
+  flex-direction: row; /* Default: text left, image right */
+  border-radius: 20px;
+  background: rgba(22, 27, 34, 0.7); /* Slightly more opaque background */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+  border: 1px solid rgba(136, 211, 206, 0.15); /* Slightly more prominent border */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+  overflow: hidden; /* Ensures rounded corners are respected */
 }
 
+/* Hover effect for the entire card */
 .events-card:hover {
-  transform: translateY(-15px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(110, 69, 226, 0.6);
-  border-color: rgba(136, 211, 206, 0.4);
+  transform: translateY(-10px) scale(1.01); /* Subtle lift and slightly larger */
+  box-shadow: 0 25px 50px rgba(110, 69, 226, 0.5); /* Stronger glow shadow */
+  border-color: rgba(136, 211, 206, 0.5); /* More visible border on hover */
 }
 
-.events-card:hover img {
-  transform: scale(1.1);
+/* --- Event Image Section --- */
+.events-card .event-image { /* Note the addition of .events-card to select this correctly */
+  flex: 0 0 45%; /* Image takes 45% of the card width, not growing/shrinking */
+  height: 300px; /* Fixed height for consistent image size */
+  overflow: hidden; /* Hide overflowing parts of the image on scale */
+  border-radius: 20px 0 0 20px; /* Rounded left corners, sharp right */
 }
 
-.events-card .info {
-  padding: 15px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+.events-card .event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease; /* Smooth transition for hover effects */
+  filter: grayscale(0.2) brightness(0.8) contrast(1.1); /* Subtle initial filter */
 }
 
-.events-card .info h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #f1f1f1;
+.events-card:hover .event-image img {
+  transform: scale(1.08); /* Slightly less aggressive zoom on hover */
+  filter: grayscale(0) brightness(1) contrast(1); /* Full color on hover */
+}
+
+/* --- Event Info Section --- */
+.events-card .event-info { /* This was previously named .info, changed to match JS & HTML */
+  flex: 1; /* Takes up remaining space */
+  padding: 30px; /* More generous padding */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+}
+
+.events-card .event-info h3 {
+  margin: 0 0 10px 0; /* Adjusted margin */
+  font-size: clamp(1.5rem, 2.5vw, 2rem); /* More prominent title */
+  color: #fff;
   font-family: "Orbitron", sans-serif;
+  line-height: 1.2;
 }
 
-.events-card .info p {
-  font-size: 0.85rem;
-  color: #88d3ce;
+.events-card .event-info p {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem); /* Larger and more readable description */
+  color: #c0c0c0;
+  line-height: 1.6;
 }
 
+/* --- Call to Action Button --- */
 .events-cta {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 5rem; /* More space above the button */
     position: relative;
     z-index: 1;
 }
 
 .events-btn {
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
+    padding: 18px 45px; /* Larger button */
+    font-size: 1.2rem; /* Larger font */
+    background: linear-gradient(135deg, #6e45e2, #88d3ce); /* Using exact colors */
     border: none;
     border-radius: 50px;
     color: white;
@@ -101,16 +131,72 @@
     font-family: 'Orbitron', sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
-    box-shadow: 0 10px 30px rgba(110, 69, 226, 0.3);
+    box-shadow: 0 12px 35px rgba(110, 69, 226, 0.4); /* Stronger shadow */
 }
 
 .events-btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(110, 69, 226, 0.5);
+    transform: translateY(-8px) scale(1.06); /* More pronounced hover effect */
+    box-shadow: 0 20px 50px rgba(110, 69, 226, 0.6); /* Even stronger glow */
 }
 
-@media (max-width: 768px) {
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) { /* Adjust breakpoint for tablets */
   .events-card {
-    width: 240px;
+    max-width: 700px; /* Adjust max-width for tablet views */
+    flex-direction: column; /* Stack image on top of text */
+  }
+
+  .events-card .event-image {
+    width: 100%;
+    height: 250px; /* Adjust height for mobile images */
+    border-radius: 20px 20px 0 0; /* Rounded top corners for stacked layout */
+    order: 1; /* Image appears first */
+  }
+
+  .events-card .event-info {
+    order: 2; /* Text appears second */
+    padding: 25px; /* Slightly less padding */
+  }
+
+  .events-card .event-info h3 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+  }
+
+  .events-card .event-info p {
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+  }
+}
+
+@media (max-width: 600px) { /* For smaller phones */
+  #events {
+    padding: 80px 15px; /* Reduce overall section padding */
+  }
+
+  #events h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 40px;
+  }
+
+  .events-container {
+    gap: 40px; /* Reduce gap between cards */
+  }
+
+  .events-card {
+    border-radius: 15px; /* Slightly smaller border-radius */
+  }
+
+  .events-card .event-image {
+    height: 200px; /* Smaller image height */
+    border-radius: 15px 15px 0 0;
+  }
+
+  .events-card .event-info {
+    padding: 20px;
+  }
+  
+  .events-btn {
+    padding: 14px 30px;
+    font-size: 1rem;
+    margin-top: 3rem;
   }
 }
