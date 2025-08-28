@@ -2,15 +2,6 @@
 
 const projects = [
   {
-    title: "Space Station Simulator",
-    description: "Virtual reality simulation of International Space Station operations and zero-gravity experiments.",
-    image: "assets/projects/project-1.png",
-    tags: ["VR/AR", "Simulation", "Education"],
-    isOngoing: true,
-    liveLink: "#",
-    githubLink: "#"
-  },
-  {
     title: "Cansat",
     description: "A CanSat is a miniaturized satellite that’s built to fit inside the volume of a soda can. It giveshands-on experience with designing, building, and testing a satellite system at a much lower cost and complexity than a real satellite.",
     image: "assets/projects/project-2.webp",
