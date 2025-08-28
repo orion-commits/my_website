@@ -5,9 +5,9 @@ const execomMembers = [
     name: "Asst.Prof Vishnu Prasad",
     title: "Faculty Advisor",
     image: "assets/execom/vishnusir.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/vpkgec",
     github: "#",
-    instagram: "#"
+    instagram: "https://www.instagram.com/vpk.mathur"
   },
   {
     name: "Sona Krishna S",
@@ -46,9 +46,9 @@ const execomMembers = [
     name: "Sreya C",
     title: "Event Coordinator",
     image: "assets/execom/sreya.jpeg",
-    linkedin: "https://www.instagram.com/sreya_c_r?igsh=eW1wMWRya29meDZn",
+    instagram: "https://www.instagram.com/sreya_c_r?igsh=eW1wMWRya29meDZn",
     github: "https://github.com/sreya-c-r",
-    instagram: "https://www.linkedin.com/in/sreya-c-1a13ab270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    linkedin: "https://www.linkedin.com/in/sreya-c-1a13ab270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
   },
   {
     name: "Jithin Sunildas",
