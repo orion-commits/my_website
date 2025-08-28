@@ -50,7 +50,7 @@ const execomMembers = [
     github: "#",
     instagram: "https://www.instagram.com/sahla.rahman_?igsh=MXhkMjI3djg3enJicw=="
   },
-  // Add more members here
+
   {
     name: "Pranav SR",
     title: "Event Committee",
@@ -59,5 +59,5 @@ const execomMembers = [
     github: "#",
     instagram: "https://www.instagram.com/pra_nav_s_r?igsh=MWg1d3dudzVlcjhjdg=="
   },
-  // Add more members here
+  
 ];
