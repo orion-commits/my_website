@@ -117,33 +117,28 @@
 }
 
 /* "Ongoing" Tag */
-/* "Ongoing" Tag */
 .ongoing-tag {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 12px;   /* ✅ keep inside the card */
+  right: -35px; /* ✅ slight offset for angled effect */
   background: linear-gradient(
     135deg,
     var(--secondary-accent),
     var(--primary-accent)
-  ); /* Using accent colors */
+  );
   color: white;
-  padding: 8px 25px;
-  font-size: 0.85rem;
+  padding: 5px 0;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
   text-transform: uppercase;
-  border-bottom-left-radius: 10px;
-  transform: rotate(45deg) translate(20%, -20%); /* Angle the tag */
-  transform-origin: 100% 0%; /* Rotate from top right corner */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-  /* This positioning and transform is for the angled look */
-  top: -10px; /* Adjust if needed to fit perfectly */
-  right: -30px; /* Adjust if needed to fit perfectly */
-  width: 120px; /* Ensure enough width for text after rotation */
+  letter-spacing: 0.5px;
   text-align: center;
+  width: 140px; /* ✅ wide enough for text */
+  transform: rotate(45deg); /* ✅ diagonal effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 5;
 }
+
 
 /* Project Overlay with Links */
 .project-overlay {

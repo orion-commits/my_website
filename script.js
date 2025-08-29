@@ -147,7 +147,7 @@ allSections.forEach(section => {
 
 // Join button smooth scroll
 document.getElementById('join-btn').addEventListener('click', () => {
-  document.getElementById('our-focus').scrollIntoView({ 
+  document.getElementById('join-us').scrollIntoView({ 
     behavior: 'smooth',
     block: 'start'
   });
